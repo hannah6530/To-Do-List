@@ -1,5 +1,5 @@
 import React from 'react';
-import Currenttodo from './Currenttodo'
+import Active from './Active'
 import Todoform from './Todoform'
 import './App.css';
 
@@ -9,7 +9,7 @@ function App() {
       <h1>Task Lister</h1>
       <Todoform />
 
-      <Currenttodo />
+      <Active />
 
       </div>
   );

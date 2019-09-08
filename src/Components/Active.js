@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Currenttodo = (props) => {
+const Active = (props) => {
 
   return(
     <div id="list">
@@ -11,4 +11,4 @@ const Currenttodo = (props) => {
   )
 
 }
-export default Currenttodo;
+export default Active;
