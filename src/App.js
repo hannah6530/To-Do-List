@@ -1,5 +1,6 @@
 import React from 'react';
 import Active from './Components/Active';
+import Completed from './Components/Completed';
 import Todoform from './Components/Todoform';
 import './App.css';
 
@@ -9,7 +10,7 @@ class App extends React.Component {
     items: [],
     task: '',
     id: 0,
-
+    completedItems: []
   }
 
   handleInput = (event) => {
@@ -25,9 +26,7 @@ class App extends React.Component {
       id: this.state.id,
       title: this.state.task
     }
-
     const updatedItems = [...this.state.items, newTask]
-
     this.setState({
       items: updatedItems,
       task: '',
@@ -35,9 +34,14 @@ class App extends React.Component {
     })
   }
 
+  handleComplete = (newTask) => {
+    this.setState({completedItems: [...this.state.completedItems, newTask]})
+
+
+  }
+
 
   render() {
-
     return (
       <div id="main-content">
         <h1>Task Lister</h1>
@@ -47,12 +51,15 @@ class App extends React.Component {
         task={this.state.task}
         />
         <Active
-        items={this.state.items}/>
+        items={this.state.items}
+        handleComplete={this.handleComplete}
+        />
+        <Completed
+        completedItems={this.state.completedItems}
+        />
       </div>
     )
-
   }
-
 }
 
 export default App;
