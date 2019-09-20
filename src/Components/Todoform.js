@@ -1,17 +1,20 @@
 import React from 'react';
-import Active from './Active'
 
-const Todoform = () => {
+class Todoform  extends React.Component {
 
-  return(
+  render(){
+    const {task, handleChange, handleSubmit} = this.props;
+    return(
 
-    <form id="create-task-form">
-      <label for="new-task-description">Task description:</label>
-      <input type="text" id="new-task-description" name="new-task-description" placeholder="description" />
-      <button>Create New Task</button>
-    </form>
+      <form onSubmit={handleSubmit}>
+        <label>Task description:</label>
+        <input type="text" name="name" placeholder="description" value={task} onChange={handleChange}/>
+        <button>Create New Task</button>
+      </form>
 
-  )
+    )
+
+  }
 
 }
 export default Todoform;
