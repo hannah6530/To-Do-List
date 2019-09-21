@@ -20,7 +20,5 @@ const Completed = (props) => {
     </div>
 
   )
-
-
 }
 export default Completed

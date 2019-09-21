@@ -36,7 +36,7 @@ class App extends React.Component {
 
   handleComplete = (newTask) => {
     this.setState({completedItems: [...this.state.completedItems, newTask]})
-
+    // console.log(newTask)
 
   }
 

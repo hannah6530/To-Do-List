@@ -2,7 +2,7 @@ import React from 'react'
 import Todo from './Todo'
 
 const Active = (props) => {
-  const { items, handlecompletedList} = props
+  const { items, handlecomplete} = props
 
 
   return(
@@ -13,7 +13,7 @@ const Active = (props) => {
           {
             items.map(item => {
               return(
-                <Todo key={item.id} handlecompleted={handlecompletedList} title={item.title}/>
+                <Todo key={item.id} handlecompletedList={handlecomplete} title={item.title}/>
               )
             })
           }

@@ -13,14 +13,11 @@ class Todo extends React.Component{
   }
 
   handleClick = () => {
-    if(this.state.checked){
-      this.props.handleComplete(this.props.title)
-    }
-
+      this.props.handlecompletedList(this.props.title)
   }
 
   render(){
-    const {title} = this.props
+    const { title } = this.props
 
     return (
       <div className="ui checked checkbox">
