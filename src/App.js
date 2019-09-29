@@ -10,7 +10,8 @@ class App extends React.Component {
     items: [],
     task: '',
     id: 0,
-    completedItems: []
+    completedItems: [],
+    isCompleted: false
   }
 
   handleInput = (event) => {
@@ -35,7 +36,9 @@ class App extends React.Component {
   }
 
   handleComplete = (newTask) => {
-    this.setState({completedItems: [...this.state.items, newTask]})
+    this.setState({
+      completedItems: [...this.state.completedItems, newTask],
+    })
     // console.log(this.state.items)
   }
 
@@ -51,6 +54,7 @@ class App extends React.Component {
         <Active
         items={this.state.items}
         handleComplete={this.handleComplete}
+        isCompleted={this.state.isCompleted}
         />
         <Completed
         completedItems={this.state.completedItems}

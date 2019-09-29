@@ -13,8 +13,9 @@ class Todo extends React.Component{
   }
 
   handleClick = () => {
-      this.props.handlecompletedList(this.props.title)
-
+      this.props.handlecompletedList({
+        title: this.props.title
+      })
   }
 
   render(){
