@@ -9,7 +9,7 @@ class Todoform  extends React.Component {
       <form onSubmit={handleSubmit}>
         <label>Task description:</label>
         <input type="text" name="name" placeholder="description" value={task} onChange={handleChange}/>
-        <button>Create New Task</button>
+        <button className="formButton">Create New Task</button>
       </form>
 
     )

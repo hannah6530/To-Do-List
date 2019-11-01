@@ -42,6 +42,20 @@ class App extends React.Component {
     // console.log(this.state.items)
   }
 
+  handleDeleteActive = (task) => {
+    this.setState({
+      items: this.state.items.filter(aTask => aTask.title !== task.title)
+    })
+  }
+
+
+  handleDeleteCompleted = (task) => {
+    this.setState({
+      completedItems: this.state.completedItems.filter(aTask => aTask.title !== task.title)
+    })
+
+  }
+
   render() {
     return (
       <div id="main-content">
@@ -55,9 +69,11 @@ class App extends React.Component {
         items={this.state.items}
         handleComplete={this.handleComplete}
         isCompleted={this.state.isCompleted}
+        handleDeleteActive={this.handleDeleteActive}
         />
         <Completed
         completedItems={this.state.completedItems}
+        handleDeleteCompleted={this.handleDeleteCompleted}
         />
       </div>
     )

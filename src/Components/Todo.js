@@ -3,7 +3,8 @@ import React from 'react'
 class Todo extends React.Component{
 
   state = {
-    checked: false
+    checked: false,
+    strikeThrough: false
   }
 
   handleCheck = () => {
@@ -18,13 +19,31 @@ class Todo extends React.Component{
       })
   }
 
+  handleDeleteTask = () => {
+    this.props.deleteTask(this.props)
+  }
+
+
   render(){
     const { title } = this.props
 
     return (
       <div className="ui checked checkbox">
         <input type="checkbox" checked={this.state.checked} onChange={this.handleCheck} onClick={this.handleClick}/>
-        <label>Completed {title}</label>
+        <label
+        style={{
+          textDecorationLine: this.state.checked ? 'line-through' : 'none',
+          textDecorationStyle: 'solid', textDecorationColor: 'red'
+        }}>
+          Completed {title}
+          </label>
+          <button onClick={this.handleDeleteTask} style={{
+          backgroundColor: 'indigo',
+          color: 'white',
+          position: 'absolute',
+          right: '-50px',
+          top: '-5px'
+        }}className="mini ui button"> X </button>
       </div>
     )
 

@@ -10,7 +10,8 @@ body {
   background: linear-gradient(pink, violet) !important;
 }
 
-button {
+
+button .formButton{
   font-size: 7px;
 }
 
@@ -59,4 +60,25 @@ button {
 }
 .position{
   text-align: center;
+}
+/* .deleteButton{
+  position: absolute;
+  right: -39px;
+  top: 2px;
+  width: 10px;
+  background-color: indigo;
+  color: white;
+  padding: 0% 15px 2px;
+  border-radius: 10px 12 ;
+}
+.deleteButton:hover{
+  background-color: purple;
+} */
+/* button {
+  position: absolute;
+  right: -50px;
+  top: -5px;
+} */
+button .buttonPosition:hover{
+  background-color: 'purple'
 }
