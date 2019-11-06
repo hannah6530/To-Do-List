@@ -23,9 +23,10 @@ class Todo extends React.Component{
     this.props.deleteTask(this.props)
   }
 
-
   render(){
     const { title } = this.props
+    let current_date = new Date();
+    let formatted_date = (current_date.getMonth() + 1) + "/" + current_date.getDate() + "/" + current_date.getFullYear()
 
     return (
       <div className="ui checked checkbox">
@@ -44,10 +45,9 @@ class Todo extends React.Component{
           right: '-50px',
           top: '-5px'
         }}className="mini ui button"> X </button>
+        <p style={{fontFamily: 'cursive', color: 'purple'}}>{formatted_date}</p>
       </div>
     )
-
   }
-
 }
 export default Todo;
