@@ -36,7 +36,7 @@ class Todo extends React.Component{
           textDecorationLine: this.state.checked ? 'line-through' : 'none',
           textDecorationStyle: 'solid', textDecorationColor: 'red'
         }}>
-          Completed {title}
+          {title}
           </label>
           <button onClick={this.handleDeleteTask} style={{
           backgroundColor: 'indigo',
@@ -45,7 +45,12 @@ class Todo extends React.Component{
           right: '-50px',
           top: '-5px'
         }}className="mini ui button"> X </button>
-        <p style={{fontFamily: 'cursive', color: 'purple'}}>{formatted_date}</p>
+        <p  style={{
+          fontFamily: 'cursive', color: 'purple',
+          position: 'absolute',
+          right: '-115px',
+          top: '0px'
+        }}>{formatted_date}</p>
       </div>
     )
   }

@@ -7,9 +7,9 @@ class Todoform  extends React.Component {
     return(
 
       <form onSubmit={handleSubmit}>
-        <label>Task description:</label>
+        <label style={{fontWeight: 'bold'}}>Task description: </label>
         <input type="text" name="name" placeholder="description" value={task} onChange={handleChange}/>
-        <button className="formButton">Create New Task</button>
+        <button style={{fontFamily: 'cursive', fontWeight:'bold'}}className="formButton">Create New Task</button>
       </form>
 
     )
