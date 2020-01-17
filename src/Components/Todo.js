@@ -3,8 +3,7 @@ import React from 'react'
 class Todo extends React.Component{
 
   state = {
-    checked: false,
-    strikeThrough: false
+    checked: false
   }
 
   handleCheck = () => {
@@ -28,7 +27,7 @@ class Todo extends React.Component{
     let current_date = new Date();
     let formatted_date = (current_date.getMonth() + 1) + "/" + current_date.getDate() + "/" + current_date.getFullYear()
 
-    return (
+    return(
       <div className="ui checked checkbox">
         <input type="checkbox" checked={this.state.checked} onChange={this.handleCheck} onClick={this.handleClick}/>
         <label

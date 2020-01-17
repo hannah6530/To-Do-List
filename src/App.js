@@ -48,12 +48,10 @@ class App extends React.Component {
     })
   }
 
-
   handleDeleteCompleted = (task) => {
     this.setState({
       completedItems: this.state.completedItems.filter(aTask => aTask.title !== task.title)
     })
-
   }
 
   render() {
