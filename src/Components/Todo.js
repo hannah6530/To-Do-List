@@ -6,16 +6,19 @@ class Todo extends React.Component{
     checked: false
   }
 
-  handleCheck = () => {
+  handleCheck = () => { //allows you to check and uncheck
     this.setState({
       checked: !this.state.checked
     })
   }
 
   handleClick = () => {
+
       this.props.handlecompletedList({
         title: this.props.title
       })
+
+
   }
 
   handleDeleteTask = () => {

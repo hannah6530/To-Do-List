@@ -11,7 +11,7 @@ class App extends React.Component {
     task: '',
     id: 0,
     completedItems: [],
-    isCompleted: false
+    // isCompleted: false
   }
 
   handleInput = (event) => {
@@ -28,12 +28,14 @@ class App extends React.Component {
       title: this.state.task
     }
     const updatedItems = [...this.state.items, newTask]
+
     this.setState({
-      items: updatedItems,
-      task: '',
+      items: updatedItems, //updating the items array with newly added items
+      task: '', //resetting the input bar to a blank string
       id: this.state.id + 1
     })
   }
+
 
   handleComplete = (newTask) => {
     this.setState({
