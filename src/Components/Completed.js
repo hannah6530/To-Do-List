@@ -12,7 +12,7 @@ const Completed = (props) => {
       {
         completedItems.map(item => {
           return(
-            <Todo key={item.id} title={item.title} deleteTask={handleDeleteCompleted}/>
+            <Todo key={item.id} title={item.title} deleteTask={handleDeleteCompleted} isCompleted={true}/>
           )
         })
       }

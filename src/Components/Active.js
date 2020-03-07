@@ -12,7 +12,7 @@ const Active = (props) => {
           {
             items.map(item => {
               return(
-                <Todo key={item.id} handlecompletedList={handleComplete} deleteTask={handleDeleteActive} title={item.title}/>
+                <Todo key={item.id} handlecompletedList={handleComplete} deleteTask={handleDeleteActive} title={item.title} isCompleted={false}/>
               )
             })
           }
