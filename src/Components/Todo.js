@@ -34,17 +34,26 @@ class Todo extends React.Component {
       current_date.getFullYear();
 
     return (
-      <div className="ui checked checkbox">
-        { this.props.isCompleted ? 
-          ''
-         : 
+      
+      { this.props.isCompleted?
+
+      <div>
+
+      {title}
+
+      </div>
+
+      :
+      
+      
+      <div className="ui checked checkbox">  
          <input
             type="checkbox"
             checked={this.state.checked}
             onChange={this.handleCheck}
             onClick={this.handleClick}
           />
-        }
+        
         <label
           style={{
             textDecorationLine: this.state.checked ? "line-through" : "none",
@@ -80,6 +89,8 @@ class Todo extends React.Component {
           {formatted_date}
         </p>
       </div>
+    }
+
     );
   }
 }
