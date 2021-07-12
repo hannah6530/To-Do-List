@@ -20,6 +20,7 @@ class Todo extends React.Component {
 
   handleDeleteTask = () => {
     this.props.deleteTask(this.props);
+    // console.log(this.props)
   };
 
   render() {
@@ -34,17 +35,20 @@ class Todo extends React.Component {
       current_date.getFullYear();
 
     return (
+      <>
       
-      { this.props.isCompleted?
+      {
+        this.props.isCompleted?
 
       <div>
-
-      {title}
-
+        <ul>
+          <li>
+          {title}
+          </li>
+        </ul>
       </div>
 
       :
-      
       
       <div className="ui checked checkbox">  
          <input
@@ -90,6 +94,10 @@ class Todo extends React.Component {
         </p>
       </div>
     }
+    </>
+
+
+
 
     );
   }

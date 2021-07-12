@@ -12,29 +12,30 @@ class App extends React.Component {
     id: 0,
     completedItems: [],
     // isCompleted: false
-  }
+  };
 
   handleInput = (event) => {
     this.setState({
       task: event.target.value
     })
-  }
+    // console.log(event.target.value)
+  };
 
   handleSubmit = (event) => {
-    event.preventDefault()
+    event.preventDefault();
 
     const newTask = {
       id: this.state.id,
       title: this.state.task
-    }
-    const updatedItems = [...this.state.items, newTask]
+    };
+    const updatedItems = [...this.state.items, newTask];
 
     this.setState({
       items: updatedItems, //updating the items array with newly added items
       task: '', //resetting the input bar to a blank string
       id: this.state.id + 1
     })
-  }
+  };
 
 
   handleComplete = (newTask) => {
@@ -42,19 +43,19 @@ class App extends React.Component {
       completedItems: [...this.state.completedItems, newTask],
     })
     // console.log(this.state.items)
-  }
+  };
 
   handleDeleteActive = (task) => {
     this.setState({
       items: this.state.items.filter(aTask => aTask.title !== task.title)
     })
-  }
+  };
 
   handleDeleteCompleted = (task) => {
     this.setState({
       completedItems: this.state.completedItems.filter(aTask => aTask.title !== task.title)
     })
-  }
+  };
 
   render() {
     return (
